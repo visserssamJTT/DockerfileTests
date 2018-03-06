@@ -17,10 +17,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc
 # them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common && apt-get -y -q install postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3 && apt-get -y -q install vim
 RUN apt-get update
-RUN apt-get -y -q install default-jre
-RUN apt-get -y -q install default-jdk
-RUN apt-get -y -q install software-properties-common
-RUN apt-get update
+
 
 
 USER postgres
