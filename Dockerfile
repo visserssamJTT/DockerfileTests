@@ -38,15 +38,3 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 EXPOSE 5432
 
 RUN mkdir -p /var/run/postgresql && chown -R postgres /var/run/postgresql
-
-# Could not figure out how to set up volumes in the docker file us the -v flag in the run command to do it also name it, makes life easier
-#VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
-
-USER postgres
-
-# Set the default command to run when starting the container
-CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf" ]
-
-USER root
-
-
